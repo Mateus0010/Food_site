@@ -1,17 +1,20 @@
+/* Header */
 header {
   width: 100%;
-  padding: 28px 8%;
+  padding: 28px 8%; /* Remover padding fixo de 28px */
   position: sticky;
   top: 0;
   background-color: var(--color-primary-1);
   z-index: 3;
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
 }
 
+/* Navbar */
 #navbar {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 #nav_logo {
@@ -25,6 +28,38 @@ header {
   gap: 48px;
 }
 
+/* Submenu do Cardápio */
+#nav_cardapio ul {
+  padding-left: 0;
+  list-style-type: none;
+  display: none; /* Oculto inicialmente */
+  background-color: var(--color-neutral-0);
+  margin-top: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+#nav_cardapio ul li {
+  margin: 0;
+}
+
+#nav_cardapio ul li a {
+  text-decoration: none;
+  color: var(--color-primary-3); /* Cor dos links */
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  background-color: var(--color-neutral-0); /* Cor de fundo dos links */
+}
+
+#nav_cardapio ul li a:hover {
+  background-color: var(--color-primary-6); /* Cor de fundo ao passar o mouse */
+  color: var(--color-neutral-0); /* Cor do texto ao passar o mouse */
+}
+
 .nav-item a {
   text-decoration: none;
   color: #1d1d1dad;
@@ -36,6 +71,7 @@ header {
   border-bottom: 3px solid var(--color-primary-4);
 }
 
+/* Botão e menu móvel */
 #mobile_btn {
   display: none;
 }
@@ -47,32 +83,49 @@ header {
 @media screen and (max-width: 1170px) {
   #nav_list,
   #navbar .btn-default {
-      display: none;
+    display: none;
   }
 
   #mobile_btn {
-      display: block;
-      border: none;
-      background-color: transparent;
-      font-size: 1.5rem;
-      cursor: pointer;
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 
   #mobile_menu.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Certifique-se de que o menu móvel ocupa toda a largura */
+    box-sizing: border-box;
+    padding: 10px; /* Adiciona padding ao menu móvel */
   }
 
   #mobile_nav_list {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 12px 0px;
+    margin: 12px 0;
+    width: 100%; /* Certifique-se de que a lista de navegação móvel ocupa toda a largura */
   }
 
   #mobile_nav_list .nav-item {
-      list-style: none;
-      text-align: center;
+    list-style: none;
+    text-align: center;
+    width: 100%; /* Certifique-se de que cada item de navegação móvel ocupa toda a largura */
   }
+
+  #mobile_nav_list .nav-item a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Garantir que o body não cause overflow horizontal */
+body {
+  overflow-x: hidden;
 }

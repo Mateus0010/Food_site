@@ -1,0 +1,28 @@
+return-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.return-button {
+  /* Essas propriedades já são aplicadas pela classe .btn-default */
+  padding: 12px 24px;
+  background-color: var(--color-primary-6);
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+  background-color: var(--color-primary-5);
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  .return-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

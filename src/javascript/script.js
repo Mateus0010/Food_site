@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Menu móvel
   $('#mobile_btn').on('click', function () {
       $('#mobile_menu').toggleClass('active');
       $('#mobile_btn').find('i').toggleClass('fa-x');
@@ -22,40 +23,51 @@ $(document).ready(function() {
     sections.each(function(i) {
       const section = $(this);
       const sectionTop = section.offset().top - 96;
-      const sectionBottom = sectionTop+ section.outerHeight();
+      const sectionBottom = sectionTop + section.outerHeight();
     
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         activeSectionIndex = i;
         return false;
       }
+    });
 
-    })
-
-      navitems.removeClass('active');
+    navitems.removeClass('active');
     $(navitems[activeSectionIndex]).addClass('active');
   });
 
+  // Submenu para o desktop
+  $('#nav_list .nav-item:has(ul)').on('click', function(e) {
+    e.preventDefault();
+    $(this).find('ul').toggle();
+  });
+
+  // Submenu para o mobile
+  $('#mobile_cardapio').on('click', function() {
+    $('#mobile_cardapio_options').slideToggle();
+  });
+
+  // ScrollReveal
   ScrollReveal().reveal('#cta', {
     origin: 'left',
     duration: 2000,
     distance: '20%'
-});
+  });
 
-ScrollReveal().reveal('.dish', {
+  ScrollReveal().reveal('.dish', {
     origin: 'left',
     duration: 2000,
     distance: '20%'
-});
+  });
 
-ScrollReveal().reveal('#testimonial_chef', {
+  ScrollReveal().reveal('#testimonial_chef', {
     origin: 'left',
     duration: 1000,
     distance: '20%'
-})
+  });
 
-ScrollReveal().reveal('.feedback', {
+  ScrollReveal().reveal('.feedback', {
     origin: 'right',
     duration: 1000,
     distance: '20%'
-})
+  });
 });

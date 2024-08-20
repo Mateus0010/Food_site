@@ -87,6 +87,7 @@
     text-align: center;
     align-items: center;
   }
+  
 
 
 }
@@ -95,6 +96,7 @@
   #cta_buttons {
     flex-direction: column;
   }
+
 }
 
 
