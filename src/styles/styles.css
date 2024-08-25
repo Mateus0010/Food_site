@@ -26,10 +26,12 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 body {
     background-color: var(--color-primary-1);
+    overflow-x: hidden;
 }
 
 section {
