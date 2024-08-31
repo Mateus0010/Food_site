@@ -89,3 +89,12 @@ section {
 .section-subtitle {
   font-size: 2.1875rem;
 }
+
+/* Força a cor preta nos ícones */
+a,
+a:link,
+a:visited {
+    color: black !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent; /* Remove a cor de destaque ao clicar */
+}
