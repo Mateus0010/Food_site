@@ -90,3 +90,8 @@
     flex-direction: column;
   }
 }
+
+.btn-default:hover {
+  background-color: var(--color-primary-6); /* Cor de fundo ao passar o mouse */
+  color: var(--color-neutral-1); /* Cor do texto ao passar o mouse */
+}
