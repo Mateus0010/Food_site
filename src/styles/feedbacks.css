@@ -1,0 +1,185 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffe8b4, #e9a209);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+span {
+  color: #e9a209;
+}
+
+.form-container {
+  background-color: #fff9ea;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+  transition: border-color 0.8s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: #e9a209;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffcb45;
+  color: #1d1d1d;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #e9a209;
+}
+
+/* Adicionando media query para telas menores que 400px */
+@media (max-width: 400px) {
+  .form-container {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .form-group input, 
+  .form-group textarea {
+    font-size: 12px;
+  }
+
+  .btn-submit {
+    font-size: 15px;
+  }
+}
+
+/* Ajustando campos de input e textarea para telas menores */
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Adicionando box-sizing para calcular o tamanho do campo corretamente */
+}
+
+/* Ajustando tamanho do campo de texto para telas menores */
+@media (max-width: 400px) {
+  .form-group input, 
+  .form-group textarea {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Ajustando tamanho do campo de feedback para telas menores */
+.form-group textarea {
+  resize: vertical;
+  height: 80px; /* Ajustando altura do campo de feedback */
+}
+
+@media (max-width: 400px) {
+  .form-group textarea {
+    height: 60px; /* Ajustando altura do campo de feedback para telas menores */
+  }
+}
+
+/* Estilizando placeholders */
+::-webkit-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+::-moz-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+
+.form-group input:focus::-webkit-input-placeholder,
+.form-group textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.form-group input:focus::-moz-placeholder,
+.form-group textarea:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.form-group input:focus:-ms-input-placeholder,
+.form-group textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-group input:focus::-ms-input-placeholder,
+.form-group textarea:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0;
+}
