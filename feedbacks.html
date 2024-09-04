@@ -3,8 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliação</title>
+    <title>Feedback</title>
     <link rel="stylesheet" href="src/styles/feedbacks.css">
+    <style>
+        /* Estilos para a nuvem de agradecimento */
+        #thankYouMessage {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            max-width: 90%;
+            width: 300px; /* Largura fixa para desktop */
+            box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+        }
+    
+        #thankYouMessage button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    
+        #thankYouMessage button:hover {
+            background-color: #45a049;
+        }
+    
+        @media (max-width: 600px) {
+            #thankYouMessage {
+                width: 80%; /* Largura maior para dispositivos móveis */
+            }
+    
+            #thankYouMessage button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,15 +61,28 @@
                 <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
             </div>
             <div class="form-group">
-                <input type="tel" id="numero" name="numero" required placeholder="Digite seu número">
+                <input type="text" id="numero" name="numero" required placeholder="Digite seu número">
             </div>
             <div class="form-group">
                 <textarea id="feedback" name="feedback" required placeholder="Digite aqui seu feedback"></textarea>
             </div>
             <button type="submit" class="btn-submit">Enviar feedback</button>
         </form>
+
+        <div id="thankYouMessage">
+            <p>Obrigado pelo seu feedback!</p>
+            <button onclick="redirectToHome()">OK</button>
+        </div>
+
     </div>
 
-    <script src="src/javascript/email.js"></script>
+    <!-- Inclusão do SDK do EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="src/javascript/email.js"></script>
+    <script type="text/javascript">
+        function redirectToHome() {
+            window.location.href = 'index.html'; // Substitua pelo caminho correto para a página inicial
+        }
+    </script>
 </body>
 </html>
