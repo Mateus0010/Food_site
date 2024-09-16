@@ -130,6 +130,23 @@ body {
   overflow-x: hidden;
 }
 
+.dish {
+  /* Definindo uma largura e altura fixa para as divs que contêm as imagens */
+  width: 100%;
+  max-width: 300px; /* Tamanho máximo da div para cada item */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.dish img {
+  width: 100%; /* A imagem ocupará toda a largura disponível */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Cobre a área da div de forma uniforme */
+  max-height: 200px; /* Define uma altura máxima para a imagem */
+  border-radius: 8px; /* Bordas arredondadas */
+}
 
 .button-wrapper {
   top: 0px;
